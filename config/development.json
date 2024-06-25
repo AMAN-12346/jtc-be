@@ -1,0 +1,8 @@
+{
+  "dbUrl": "mongodb+srv://MoonStore:MoonStore@cluster0.g7bz68i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  "cookieOption": {
+    "httpOnly": false,
+    "secure": false,
+    "maxAge": 10800000
+  }
+}

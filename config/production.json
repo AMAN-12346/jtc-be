@@ -1,0 +1,8 @@
+{
+    "dbUrl": "",
+    "cookieOption": {
+        "httpOnly": true,
+        "secure": true,
+        "maxAge": 10800000
+    }
+}
