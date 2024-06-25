@@ -1,0 +1,32 @@
+{
+  "author": "https://www.moondive.co/",
+  "port": 1950,
+  "hostAddress": "http://localhost:",
+  "databaseHost": "127.0.0.1",
+  "databasePort": "27017",
+  "databaseName": "MoonStore-org",
+  "jwtSecret": "nodeJwt",
+  "nodemailer": {
+    "service": "gmail",
+    "email": "",
+    "password": ""
+  },
+  "jwtOptions": {
+    "expiresIn": "24h"
+  },
+  "swaggerDefinition": {
+    "info": {
+      "title": "[ Welcome to Mores Server side API. ]",
+      "version": "2.0",
+      "description": "Mores API Docs"
+    },
+    "basePath": "/api/v1",
+    "securityDefinitions": {
+      "tokenauth": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}
