@@ -1,1 +1,1 @@
-# Hackathon-react-native-servers
+# Hackathon-native-servers
