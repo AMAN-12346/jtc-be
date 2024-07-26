@@ -10,34 +10,31 @@ import swaggerJSDoc from "swagger-jsdoc";
 import apiErrorHandler from '../helper/apiErrorHandler';
 import userRouter from '../api/v1/controllers/user/routes';
 const useragent = require('express-useragent');
-import UserAgent from 'user-agents';
 import config from "config";
-import { Server as SocketIOServer } from "socket.io";
 const app = express();
-const userAgent = new UserAgent();
 app.use(useragent.express());
 const server = http.createServer(app);
 const root = path.normalize(`${__dirname}/../..`);
 
 class ExpressServer {
   constructor() {
-    const httpsAgent = new https.Agent({
-      rejectUnauthorized: false
-    });
+    // const httpsAgent = new https.Agent({
+    //   rejectUnauthorized: false
+    // });
 
     app.use(express.json({ limit: '1000mb' }));
     app.use(express.urlencoded({ extended: true, limit: '1000mb' }));
     app.use(morgan('dev'));
     app.set('trust proxy', 1); // Trust first proxy
-    app.use((req, res, next) => {
-      req.httpsAgent = httpsAgent;
-      next();
-    });
+    // app.use((req, res, next) => {
+    //   req.httpsAgent = httpsAgent;
+    //   next();
+    // });
 
     app.use(cors({
       allowedHeaders: ["Content-Type", "token", "authorization"],
       exposedHeaders: ["token", "authorization"],
-      origin: ["http://localhost:3000"],
+      origin: ["*"],
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
       credentials: true,
       preflightContinue: false,

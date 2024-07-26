@@ -1,5 +1,5 @@
 {
-  "dbUrl": "mongodb+srv://MoonStore:MoonStore@cluster0.g7bz68i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  "dbUrl": "mongodb+srv://Moondive:Moondive@cluster0.o12vh7n.mongodb.net/Moondive",
   "cookieOption": {
     "httpOnly": false,
     "secure": false,

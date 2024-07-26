@@ -6,6 +6,7 @@ import { userServices } from '../../services/user';
 import ApiResponse from "../../../../helper/apiResponse";
 import responseMessage from "../../../../../config/responseMessage";
 import userType from "../../../../enums/userType";
+import ProductSchema from "../../../../models/product";
 
 /**
  * @export
