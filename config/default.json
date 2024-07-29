@@ -14,6 +14,10 @@
   "jwtOptions": {
     "expiresIn": "24h"
   },
+   "emailAuth": {
+    "user": "amansinghfoujdar001@gmail.com",
+    "pass": "brguqftysvopxibk"
+  },
   "swaggerDefinition": {
     "info": {
       "title": "[ Welcome to Moondive Server side API. ]",

@@ -9,36 +9,49 @@ const userSchema = new Schema({
   lastName: {
     type: String,
   },
+  fullName: {
+    type: String,
+  },
   email: {
     type: String,
   },
-  password: {
-    type: String
+  guestEmail: {
+    type: String,
+  },
+  meetinglocation: {
+    type: String,
+  },
+  meetingLink: {
+    type: String,
+  },
+  companyName: {
+    type: String,
+  },
+  companyCountry: {
+    type: String,
+  },
+  websiteUrl: {
+    type: String,
+  },
+  expectedTime: {
+    type: String,
+  },
+  projectPhase: {
+    type: String,
+  },
+  meetingTime: {
+    type: String,
+  },
+  message: {
+    type: String,
   },
   mobileNumber: {
     type: String,
   },
-  isMobileVerified: {
-    type: Boolean,
-    default: false
-  },
-  gender: {
+  intrestedIn: {
     type: String,
   },
-  fullAddress: {
-    type: String
-  },
-  pinCode: {
-    type: Number
-  },
-  city: {
-    type: String,
-  },
-  locality: {
-    type: String
-  },
-  order: [],
-  wishlist: []
+
 }, { timestamps: true });
 
 const UserSchema = Mongoose.model("Users", userSchema);

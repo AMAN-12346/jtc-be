@@ -1,63 +1,63 @@
-import Joi from "joi";
-import _ from "lodash";
-import Config from "config";
-import commonFunction from "../../../../helper/util";
+import Joi from 'joi';
+import _ from 'lodash';
+import Config from 'config';
+import commonFunction from '../../../../helper/util';
 import { userServices } from '../../services/user';
-import ApiResponse from "../../../../helper/apiResponse";
-import responseMessage from "../../../../../config/responseMessage";
-import userType from "../../../../enums/userType";
-import ProductSchema from "../../../../models/product";
+import ApiResponse from '../../../../helper/apiResponse';
+import responseMessage from '../../../../../config/responseMessage';
+import userType from '../../../../enums/userType';
+import ProductSchema from '../../../../models/product';
 
 /**
  * @export
  * @constant {any} userResult Getting an Object of user Info from Database.
  */
 
-const {
-  createUser,
-  findUser,
-  updateUser,
-} = userServices;
+const { createUser, findUser, updateUser } = userServices;
 
 export class userController {
-  async register(req, res, next) {
+
+  async contactUs(req, res, next) {
     const validationSchema = {
-      firstName: Joi.string().required(),
-      lastName: Joi.string().required(),
+      intrestedIn: Joi.string().required(),
+      fullName: Joi.string().required(),
       email: Joi.string().required(),
-      password: Joi.string().required(),
-      mobileNumber: Joi.string().required(),
+      companyName: Joi.string().required(),
+      companyCountry: Joi.string().required(),
+      websiteUrl: Joi.string().optional(),
+      expectedTime: Joi.string().optional(),
+      projectPhase: Joi.string().optional(),
+      message: Joi.string().required(),
     };
     try {
-      const validatedBody = await Joi.validate(req.body, validationSchema)
-      const { firstName, lastName, email, password, mobileNumber } = validatedBody
-      var result
-      var token
-      const userExist = await findUser({
-        $or: [
-          { email },
-          { mobileNumber }
-        ]
-      });
-      if (userExist) {
-        if (userExist.email === email) {
-          return res.json(ApiResponse.conflict({}, responseMessage.EMAIL_EXIST))
-        }
-        if (userExist.mobileNumber === mobileNumber) {
-          return res.json(ApiResponse.conflict({}, responseMessage.MOBILE_EXIST))
-        }
-      }
+      const validatedBody = await Joi.validate(req.body, validationSchema);
+      const {
+        intrestedIn,
+        fullName,
+        email,
+        companyName,
+        companyCountry,
+        websiteUrl,
+        expectedTime,
+        projectPhase,
+        message,
+      } = validatedBody;
+      var result;
+      await commonFunction.sendMail(email)
       result = await createUser({
-        firstName, lastName, email, password, mobileNumber,
-        userType: userType.USER
+        intrestedIn,
+        fullName,
+        email,
+        companyName,
+        companyCountry,
+        websiteUrl,
+        expectedTime,
+        projectPhase,
+        message,
       });
-      token = await commonFunction.getToken({result})
-      res.cookie('token', token, {
-        httpOnly: Config.get('cookieOption.httpOnly'),
-        secure: Config.get('cookieOption.secure'),
-        maxAge: Config.get('cookieOption.maxAge')
-      });
-      return res.json(ApiResponse.success({token}, responseMessage.USER_CREATED))
+      return res.json(
+        ApiResponse.success({ result }, responseMessage.REQ_SUBMIT)
+      );
     } catch (error) {
       return next(error);
     }
