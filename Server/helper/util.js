@@ -40,30 +40,27 @@ module.exports = {
         from: '<moondiveco@gmail.com>',
         to: email,
         subject: 'MoonDive account verification',
-        html: `<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
-
-        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 0 auto;">
-            <tr>
-                <td style="padding: 20px 0; text-align: center; background-color: #018191;">
-                    <h1 style="color: #fff;">Password Reset</h1>
-                </td>
-            </tr>
-            <tr>
-                <td style="padding: 20px; background-color: #fff;">
-                    <h2>Hello,</h2>
-                    <p>Your OTP (One-Time Password) for password reset request is:</p>
-                    <h3 style="color: #018191; font-size: 36px; margin: 10px 0;"></h3>
-                    <p>Please use this OTP to change your password.</p>
-                    <p>If you didn't request this OTP, please ignore this email.</p>
-                </td>
-            </tr>
-            <tr>
-                <td style="padding: 20px; background-color: #018191; text-align: center;">
-                    <p style="color: #fff;">&copy; 2023 MoonDive</p>
-                </td>
-            </tr>
-        </table>    
-    </body>`,
+        html:`
+        <body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 0 auto;">
+                <tr>
+                    <td style="padding: 20px 0; text-align: center; background-color: #018191;">
+                        <h1 style="color: #fff;">Moondive</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px; background-color: #fff;">
+                        <p>Thank you for contacting Moondive.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px; background-color: #018191; text-align: center;">
+                        <p style="color: #fff;">&copy; 2024 MoonDive</p>
+                    </td>
+                </tr>
+            </table>    
+        </body>
+        `,
       };
       transporter.sendMail(mailOption, (error, result) => {
         if (error) {
