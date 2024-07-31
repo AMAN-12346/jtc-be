@@ -22,12 +22,12 @@ export class userController {
       intrestedIn: Joi.string().required(),
       fullName: Joi.string().required(),
       email: Joi.string().required(),
-      companyName: Joi.string().optional(),
-      websiteUrl: Joi.string().optional(),
-      expectedTime: Joi.string().optional(),
-      projectPhase: Joi.string().optional(),
-      message: Joi.string().optional(),
-      budget: Joi.string().optional(),
+      companyName: Joi.string().optional().allow(''),
+      websiteUrl: Joi.string().optional().allow(''),
+      expectedTime: Joi.string().optional().allow(''),
+      projectPhase: Joi.string().optional().allow(''),
+      message: Joi.string().optional().allow(''),
+      budget: Joi.string().optional().allow(''),
     };
     try {
       const validatedBody = await Joi.validate(req.body, validationSchema);
@@ -59,6 +59,7 @@ export class userController {
         ApiResponse.success({ result }, responseMessage.REQ_SUBMIT)
       );
     } catch (error) {
+      console.log('====================================',error);
       return next(error);
     }
   }
