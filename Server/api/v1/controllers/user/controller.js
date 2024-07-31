@@ -22,12 +22,12 @@ export class userController {
       intrestedIn: Joi.string().required(),
       fullName: Joi.string().required(),
       email: Joi.string().required(),
-      companyName: Joi.string().required(),
-      companyCountry: Joi.string().required(),
+      companyName: Joi.string().optional(),
       websiteUrl: Joi.string().optional(),
       expectedTime: Joi.string().optional(),
       projectPhase: Joi.string().optional(),
-      message: Joi.string().required(),
+      message: Joi.string().optional(),
+      budget: Joi.string().optional(),
     };
     try {
       const validatedBody = await Joi.validate(req.body, validationSchema);
@@ -36,10 +36,10 @@ export class userController {
         fullName,
         email,
         companyName,
-        companyCountry,
         websiteUrl,
         expectedTime,
         projectPhase,
+        budget,
         message,
       } = validatedBody;
       var result;
@@ -49,10 +49,10 @@ export class userController {
         fullName,
         email,
         companyName,
-        companyCountry,
         websiteUrl,
         expectedTime,
         projectPhase,
+        budget,
         message,
       });
       return res.json(

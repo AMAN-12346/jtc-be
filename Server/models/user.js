@@ -42,6 +42,9 @@ const userSchema = new Schema({
   meetingTime: {
     type: String,
   },
+  budget:{
+    type: String,
+  },
   message: {
     type: String,
   },
