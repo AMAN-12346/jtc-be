@@ -1,5 +1,5 @@
 {
-  "dbUrl": "mongodb+srv://Moondive:Moondive@cluster0.o12vh7n.mongodb.net/Moondive",
+  "dbUrl": "mongodb+srv://Jaat:Jaat@cluster0.rgjvvng.mongodb.net/JaatTradeCenter",
   "cookieOption": {
     "httpOnly": false,
     "secure": false,

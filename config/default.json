@@ -1,10 +1,10 @@
 {
-  "author": "https://www.moondive.co/",
-  "port": 2000,
+  "author": "https://www.JaatTradeCenter.com/",
+  "port": 1628,
   "hostAddress": "http://localhost:",
   "databaseHost": "127.0.0.1",
   "databasePort": "27017",
-  "databaseName": "Moondive",
+  "databaseName": "JaatTradeCenter",
   "jwtSecret": "nodeJwt",
   "nodemailer": {
     "service": "gmail",
@@ -20,9 +20,9 @@
   },
   "swaggerDefinition": {
     "info": {
-      "title": "[ Welcome to Moondive Server side API. ]",
+      "title": "[ Welcome to JaatTradeCenter Server side API. ]",
       "version": "2.0",
-      "description": "Moondive API Docs"
+      "description": "JaatTradeCenter API Docs"
     },
     "basePath": "/api/v1",
     "securityDefinitions": {
