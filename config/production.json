@@ -1,5 +1,5 @@
 {
-    "dbUrl": "",
+    "dbUrl": "mongodb+srv://Jaat:Jaat@cluster0.rgjvvng.mongodb.net/JaatTradeCenter",
     "cookieOption": {
         "httpOnly": true,
         "secure": true,
